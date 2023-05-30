@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Viewer</title>
+		<style>
+			*{
+				user-select: none!important;
+			}
+			body {
+				position: absolute;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+			}
+			#appbar {
+				transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
+			}
+			#appbar[data-expand='false'] {
+				transform: translateY(-120%);
+			}
+			#expand-button {
+				position: absolute;
+				right: 8px;
+				top: 8px;
+				z-index: 99;
+			}
+			#survey-img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				border: none;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body class="mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-light">
+		<div id="appbar" class="mdui-appbar mdui-appbar-fixed">
+			<div class="mdui-toolbar mdui-color-theme">
+				<a class="mdui-typo-title">Viewer</a>
+				<div class="mdui-toolbar-spacer"></div>
+				<a id="minimize-button" class="mdui-btn mdui-btn-icon">
+					<i class="mdui-icon material-icons">arrow_drop_up</i>
+				</a>
+			</div>
+		</div>
+		<a id="expand-button" class="mdui-btn mdui-btn-icon">
+			<i class="mdui-icon material-icons">arrow_drop_down</i>
+		</a>
+		<img id="survey-img" src="" />
+		<script type="module" src="main.ts"></script>
+	</body>
+</html>
